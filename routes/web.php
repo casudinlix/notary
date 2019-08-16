@@ -19,7 +19,8 @@ Auth::routes(['register'=>false]);
 
 Route::get('/home', 'HomeController@index')->name('home');
 
-Route::group(['prefix' => '{lang}/tes'], function () {
+Route::group(['prefix' => 'tes'], function () {
 Route::get('unit','UnitController@index');
 Route::get('bahasa/','UnitController@bahasa');
 });
+//Route::resource('settings', 'Module::settings');

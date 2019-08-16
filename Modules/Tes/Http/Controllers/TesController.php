@@ -5,7 +5,9 @@ namespace Modules\Tes\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Http\Response;
 use Illuminate\Routing\Controller;
-
+use Spatie\Permission\Models\Permission;
+use Spatie\Permission\Models\Role;
+use App\User;
 class TesController extends Controller
 {
     /**
@@ -14,7 +16,10 @@ class TesController extends Controller
      */
     public function index()
     {
-        return view('tes::index');
+        $user=User::find(1);
+       echo $roles = $user->getRoleNames(); // Returns a collection
+
+       // return view('tes::index');
     }
 
     /**

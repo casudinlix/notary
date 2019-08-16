@@ -1,5 +1,7 @@
 @extends('regist::layouts.master')
-
+@section('title')
+    Pendaftaran
+@endsection
 @section('content')
 <div class="allcp-form theme-warning mw500" style="margin-top: 10%;" id="login">
 
@@ -16,7 +18,7 @@
                             <div class="smart-widget sm-right smr-80">
 
                                     <label for="email" class="field prepend-icon">
-                                        <input type="text" name="nama"  class="gui-input"
+                                        <input type="text" name="nama_lengkap"  class="gui-input"
                                                placeholder="Nama Lengkap">
                                         <label for="email" class="field-icon text-alert">
                                             <i class="fa fa-user"></i>
@@ -35,7 +37,7 @@
                             </label>
                             <br>
                             <div align="rigth"> <button for="email" type="submit" class="btn btn-success">Kirim</button></div>
-
+                        <a href="{{route('login')}}">Login</a>
                         </div>
                         <!-- -------------- /Block Widget -------------- -->
 

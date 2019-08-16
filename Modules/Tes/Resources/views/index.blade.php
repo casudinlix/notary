@@ -6,4 +6,5 @@
     <p>
         This view is loaded from module: {!! config('tes.name') !!}
     </p>
+
 @stop

@@ -106,6 +106,7 @@
 
 <!-- -------------- MaskedInput JS -------------- -->
 <script src="{{asset('assets/js/plugins/jquerymask/jquery.maskedinput.min.js')}}"></script>
+<script src="{{asset('assets/js/demo/widgets_sidebar.js')}}"></script>
 @yield('script')
 <!-- -------------- Page JS -------------- -->
 <script type="text/javascript">

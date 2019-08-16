@@ -4,8 +4,55 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "156d34e2f68bc9304a61717e279a9690",
+    "content-hash": "5afc4d77392368294dea29673ca7eba5",
     "packages": [
+        {
+            "name": "ahmadarif/terbilang",
+            "version": "v1.5",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/ahmadarif/terbilang-laravel.git",
+                "reference": "31fa9c9a29d3d7372e0ca12661c5de3db0b8b537"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/ahmadarif/terbilang-laravel/zipball/31fa9c9a29d3d7372e0ca12661c5de3db0b8b537",
+                "reference": "31fa9c9a29d3d7372e0ca12661c5de3db0b8b537",
+                "shasum": ""
+            },
+            "require": {
+                "illuminate/support": "~5.1",
+                "php": "~5.6|~7.0"
+            },
+            "require-dev": {
+                "phpunit/phpunit": ">=5.4.3",
+                "squizlabs/php_codesniffer": "^2.3"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "AhmadArif\\Terbilang\\": "src"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Ahmad Arif",
+                    "role": "Developer",
+                    "email": "ahmad.arif019@gmail.com",
+                    "homepage": "https://github.com/ahmadarif/terbilang"
+                }
+            ],
+            "homepage": "https://github.com/ahmadarif/terbilang",
+            "keywords": [
+                "AhmadArif",
+                "terbilang"
+            ],
+            "time": "2017-08-22T16:25:30+00:00"
+        },
         {
             "name": "defuse/php-encryption",
             "version": "v2.2.1",

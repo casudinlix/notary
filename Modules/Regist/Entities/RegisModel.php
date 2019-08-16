@@ -8,5 +8,6 @@ class RegisModel extends Model
 {
     use Uuid;
     protected $table='otp';
+
     protected $fillable = ['nama_lengkap','email','token'];
 }

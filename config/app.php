@@ -67,7 +67,7 @@ return [
     |
     */
 
-    'timezone' => 'UTC',
+    'timezone' => 'Asia/Jakarta',
 
     /*
     |--------------------------------------------------------------------------
@@ -80,7 +80,7 @@ return [
     |
     */
 
-    'locale' => 'id',
+    'locale' => 'id_ID.utf8',
 
     /*
     |--------------------------------------------------------------------------
@@ -93,7 +93,7 @@ return [
     |
     */
 
-    'fallback_locale' => 'en',
+    'fallback_locale' => 'id_ID.utf8',
 
     /*
     |--------------------------------------------------------------------------
@@ -179,6 +179,7 @@ return [
         Ferdhika31\LaravelLangID\LangIDServiceProvider::class,
         Yajra\DataTables\DataTablesServiceProvider::class,
         Yoeunes\Toastr\ToastrServiceProvider::class,
+        AhmadArif\Terbilang\TerbilangServiceProvider::class,
     ],
 
     /*
@@ -231,6 +232,8 @@ return [
         'View' => Illuminate\Support\Facades\View::class,
         'DataTables' => Yajra\DataTables\Facades\DataTables::class,
         'Indonesia' => Laravolt\Indonesia\Facade::class,
+        'Terbilang' => AhmadArif\Terbilang\Facade\Terbilang::class,
+
 
     ],
 

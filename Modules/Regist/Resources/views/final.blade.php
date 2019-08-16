@@ -9,7 +9,7 @@
                 <div class="panel panel-primary">
                     <div class="panel-heading pn">
                                     <span class="panel-title">
-                                     form Registrasi
+                                     form Registrasi {{$data->email}}
                                     </span>
                     </div>
                     <!-- -------------- /Panel Heading -------------- -->
@@ -21,12 +21,12 @@
                                     <label for="firstname" class="field prepend-icon">
                                        Nama Lengkap
                                     </label>
-                                    <input type="text" name="nama_lengkap" id="firstname"
+                                <input type="text" name="nama_lengkap" value="{{$data->nama_lengkap}}"
                                                class="gui-input"
                                                placeholder="Nama Lengkap">
                                 </div>
                                 <!-- -------------- /section -------------- -->
-
+                                <input type="hidden" value="{{$data->email}}" name="email">
                                 <div class="col-md-6 ph10">
                                     <label for="lastname" class="field prepend-icon">
                                         Gelar AKademik
@@ -81,7 +81,7 @@
                                     <label for="lastname" class="field prepend-icon">
                                         Gander
                                     </label>
-                                    <select name="service" id="" class="gui-input select2" required">
+                                    <select name="jenis_kelamin" id="" class="gui-input select2" required">
                                         <option value="Laki-Laki">Laki-Laki</option>
                                         <option value="Perempuan">Perempuan</option>
 
@@ -115,6 +115,12 @@
 
                                     <!-- -------------- /section -------------- -->
                                 </div>
+                                <div class="section">
+                                        <label for="email" class="field prepend-icon">
+                                           Nomor Telpon
+                                        </label>
+                                        <input type="text" onkeypress="return angka(event)" name="telpon" class="gui-input" maxlength="12">
+                                    </div>
                                 <div class="section row">
                                         <div class="col-md-6 ph10">
                                                 <label for="lastname" class="field prepend-icon">
@@ -161,6 +167,17 @@
                                                     @endforeach
                                         </select>
                                     </div>
+                                    <div class="section">
+                                            <label for="email" class="field prepend-icon">
+                                              Paket Pelayanan
+                                            </label>
+                                            <select name="paket" class="gui-input select2" id="">
+                                                <option value=""></option>
+                                                    @foreach ($paket as $key)
+                                                    <option value="{{$key->uuid}}">{{$key->name}}</option>
+                                                        @endforeach
+                                            </select>
+                                        </div>
                             <!-- -------------- /section -------------- -->
                             <div class="section row">
                                     <div class="col-md-6 ph10">
@@ -168,7 +185,7 @@
                                                 Lampiran File SK
                                             </label>
                                             <input type="file" class="gui-input"  name="file_sk">
-
+                                            <span style="color:red">Max 2 mb Pdf, Jpg, Png, Doc</span>
                                         </div>
                                     <!-- -------------- /section -------------- -->
 
@@ -177,7 +194,7 @@
                                             Lampiran File Identitas
                                         </label>
                                         <input type="file" class="gui-input" maxlength="20" name="file_ktp" onkeypress="return angka(event)">
-
+                                        <span style="color:red">Max 2 mb Pdf, Jpg, Png, Doc</span>
                                     </div>
 
 
@@ -188,7 +205,7 @@
                             <div class="section">
                                 <div class="bs-component pull-left mt10">
                                     <div class="checkbox-custom checkbox-primary mb5">
-                                        <input type="checkbox" checked="" id="agree">
+                                        <input type="checkbox" checked="" id="agree" required name="aggre">
                                         <label for="agree">I agree to the
                                             <a href="#"> terms of use. </a></label>
                                     </div>
@@ -224,11 +241,11 @@
         $('.select3').multiselect({
             enableFiltering: true
         });
-        // $('.date').datepicker({
-        //     format: 'dd/mm/yyyy',
-        //     clearBtn: true,
-        // });
-        $('.date').mask("9999-99-99");
+        $('.date').datetimepicker({
+            format: 'YYYY-MM-DD',
+            autoclose:true,
+        });
+        //$('.date').mask("9999-99-99");
 
     });
     function angka(evt) {

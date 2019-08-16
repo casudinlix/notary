@@ -6,6 +6,7 @@ use Illuminate\Support\ServiceProvider;
 use Laravel\Passport\Passport;
 use Illuminate\Support\Facades\Gate;
 use Illuminate\Support\Facades\Blade;
+use Carbon\Carbon;
 class AppServiceProvider extends ServiceProvider
 {
     /**
@@ -35,6 +36,7 @@ class AppServiceProvider extends ServiceProvider
             }
         );
 
-
+        setlocale(LC_ALL, 'id_ID.utf8');
+        Carbon::setLocale('id_ID.utf8');
     }
 }

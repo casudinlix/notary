@@ -18,5 +18,6 @@ Route::prefix('regist')->group(function() {
     Route::get('step3','RegistController@step3')->name('final');
     Route::post('token','RegistController@cek_token')->name('token');
     Route::post('final', 'RegistController@final')->name('post_final');
+    Route::post('sendrequest','RegistController@store')->name('send');
 
 });

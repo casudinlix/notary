@@ -10,18 +10,35 @@ use App\User;
 use App;
 class UnitController extends Controller
 {
-    function index($lang)
+    function index()
     {
-    //     $user=User::find(1);
-    //     //$user->assignRole('Super Users');
+      $user=User::find(Auth::id());
+        $roles = $user->getRoleNames();//['data'=>$user->getRoleNames()];
+       //return  response()->json($roles);
+    //     $data=[1,2,3,4,5,6];
+    //    //$user->assignRole('Dewa');
+    $result = array();
 
-    //   return dd($user);
-    App::setLocale($lang);
-    return view('tes');
+    foreach($roles as $inner) {
+        $result[] = $inner;
     }
-    function bahasa($lang)
-    {
-        App::setLocale($lang);
-        return view('tes');
+      if (in_array('Super Users',$result)) {
+          echo "ada";
+      } else {
+          echo "tidak ada";
+      }
+
+
+    // //     //$user->assignRole('Super Users');
+
+    // //   return dd($user);
+    // App::setLocale($lang);
+    // return view('tes');
+    // }
+    // function bahasa($lang)
+    // {
+    //     App::setLocale($lang);
+    //     return view('tes');
+//return view('tes');
     }
 }
